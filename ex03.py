@@ -24,6 +24,7 @@ def text_analyzer(argv):
     upper = 0
     space = 0
     signs = 0
+    characters = 0
     """
     Es Magia. ASi es python.... hago un contador y miro uno a uno con un bucle for
     string.punctuation
@@ -39,7 +40,9 @@ def text_analyzer(argv):
             space +=1
         if i in string.punctuation:
             signs += 1
-    print(f'The text contains {lower + upper + space + signs} character(s)')
+    for char in argv:
+        characters += 1
+    print(f'The text contains {characters} character(s)')
     print (f'-{upper} upper letter(s)\n-{lower} lower letter(s)\n-{signs} puntuation mark(s)\n-{space} space(s)')
 if __name__ == '__main__':
     text_analyzer(argv)
